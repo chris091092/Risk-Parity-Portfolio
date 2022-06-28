@@ -4,6 +4,11 @@ The goal of the project is to construct a simple risk parity portfolio. On a pur
 
 In terms of security selection, I have selected 7 securities. 3 of them are REITs, 1 of them is a family office that has a heavy exposure to private equity and the remaining ones are growth stocks from various industries. There is no specific preference in terms of market cap, liquidity, style of the stocks selected as the whole purpose of this exercise is to demonstrate the prospect of the risk parity strategy. Therefore, the 3 growth stocks are chosen because of their higher volatilities. This is essential to implement risk parity strategy effectively as it amplifies one's allocation to an asset that has a lower volatility and reduces one's allocation to risky assets at the same time.
 
+## Source of Data
+
+All daily stock performance data is extracted directly and annualised from Yahoo Finance using the "Datareader" method from the Pandas package.
+
+
 ## Summary of Findings
 
 ![](Performance%20Results%20Table.PNG)
