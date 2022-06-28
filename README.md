@@ -8,6 +8,20 @@ In terms of security selection, I have selected 7 securities. 3 of them are REIT
 
 All daily stock performance data is extracted directly and annualised from Yahoo Finance using the "Datareader" method from the Pandas package.
 
+## Portfolio Construction Methodology
+
+![](Portfolio%20Construction%20Methodology.PNG)
+
+To understand the risk parity strategy, we need to first determine the target volatility at portfolio level. The level of target volatility is subjective in nature. Depending on each investor's risk appetite, he may choose a number that is in-between the volatility of all different types of asset classes in a portfolio.
+
+Assume that there is an investor who wants to include 5 stocks and 5 bond securities in their portfolio. Assume that the average volatility per stock was estimated to be 0.15 p.a. and the volatility per bond was estimated to be 0.05 p.a.. If he wants a portfolio which has a higher return than holding bonds solely but less risky thatn holding stocks entirely, he may pick a number in the middle, which is 0.10. If the investors wants more risk, he will pick a number that is slightly higher than 0.10, say 0.12 or 0.13. For simplicity, I have assumed my target volatility as 0.10 p.a..
+
+Since there are seven securities in the portfolio, the risk budget is obtained by simply dividing our target volatility by the number of securities of the portfolio. Risk budget and Risk Contribution are interchangable terms. The risk contribution is the product of annualized volatility over 250 trading days (col.2) and the portfolio weights adjusted according to the volatility per security (col.3).
+
+The 'Port_w' column is the weight allocation adjusted by the repsective volatilities, the lower the value in column 'A_Eq_Vol',the higher the value in 'Port_w" column. However, the sum of this column does not add up to 1. Thais is why the 'F_Port_w' exists. We multiply the 'Port_w' column with a normalizing factor to generate the values in the 'F_Port_w' column (col.4).
+
+The right most column is just a product between the 'F_Port_w' column and the 'A_Eq_R', for which the latter is the annualized daily returns of each stock. The column calculates the expected return in each security depending on the allocation of our money.
+
 
 ## Summary of Findings
 
